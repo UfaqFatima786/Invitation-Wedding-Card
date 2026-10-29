@@ -8,7 +8,7 @@ export const invite = {
   venueName: 'Royal Palace Banquet',
   venueAddress: 'Main Shahrah-e-Faisal, Karachi',
   mapsLink: 'https://maps.google.com/?q=Karachi',
-  song: '/song.mp3', // apna gana public/song.mp3 mein rakhein
+  song: '/alfaaz-hamza-malik-zain-ali-lyrics-320k_TCbgIroo.mp3',
 }
 
 // icon ke naam: ladies, gents
@@ -17,13 +17,13 @@ export const dress = {
     title: 'Ladies',
     icon: 'ladies',
     note: 'Pastel lehenga, gharara ya maxi. Blush, champagne aur rose gold ko tarjeeh dein.',
-    colors: ['#f4c7c3', '#e8b4a0', '#f7e7ce', '#c98b7b'],
+    colors: ['#f4dfb1', '#dcac6b', '#fff0d0', '#8d3f38'],
   },
   boys: {
     title: 'Gentlemen',
     icon: 'gents',
     note: 'Sherwani ya waistcoat. Ivory, navy aur maroon shades khoobsurat lagengay.',
-    colors: ['#f5efe6', '#1f2a44', '#6d1f2c', '#3a3a3a'],
+    colors: ['#fff0d0', '#b98943', '#6d1f2c', '#482b2c'],
   },
 }
 

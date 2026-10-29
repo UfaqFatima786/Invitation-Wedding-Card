@@ -12,6 +12,7 @@ export default function App() {
   const [open, setOpen] = useState(false)
   const [gone, setGone] = useState(false)
   const [playing, setPlaying] = useState(false)
+  const [musicError, setMusicError] = useState(false)
   const audioRef = useRef(null)
 
   useEffect(() => {
@@ -21,27 +22,31 @@ export default function App() {
   const handleOpen = () => {
     setOpen(true)
 
-    audioRef.current
-      ?.play()
-      .then(() => setPlaying(true))
-      .catch(() => setPlaying(false))
     setTimeout(() => setGone(true), 3500)
   }
 
-  const toggleMusic = () => {
+  const toggleMusic = async () => {
     const a = audioRef.current
     if (!a) return
     if (a.paused) {
-      a.play().then(() => setPlaying(true))
+      try {
+        await a.play()
+        setPlaying(true)
+        setMusicError(false)
+      } catch {
+        setPlaying(false)
+        setMusicError(true)
+      }
     } else {
       a.pause()
       setPlaying(false)
+      setMusicError(false)
     }
   }
 
   return (
     <>
-      <audio ref={audioRef} src={invite.song} loop preload="auto" />
+      <audio ref={audioRef} src={invite.song} loop preload="none" />
       {!gone && <Gate open={open} onOpen={handleOpen} />}
       <main>
         <Hero show={open} />
@@ -54,7 +59,7 @@ export default function App() {
           <p>Aap ki tashreef hamari khushi dugni kar degi</p>
         </footer>
       </main>
-      {open && <MusicButton playing={playing} onClick={toggleMusic} />}
+      {open && <MusicButton playing={playing} error={musicError} onClick={toggleMusic} />}
     </>
   )
 }

@@ -9,7 +9,7 @@
     justify-content: center;
     gap: 10px;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 45%, #c9ab78 0%, #6e5636 62%, #2e2216 100%);
+    background: radial-gradient(circle at 50% 45%, #b8914c 0%, #60431e 58%, #25170e 100%);
 }
 
 .fgate::after {

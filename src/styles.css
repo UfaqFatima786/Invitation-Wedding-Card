@@ -1,11 +1,17 @@
+/* =========================================================
+   Nikkah Invitation - Sunset Rose-Gold theme
+   (naye Hero ke aasman aur samandar ke rangon se mel khata hai)
+   ========================================================= */
 :root {
+  --sky-top: #fff8ef;
+  --cream: #fdf3ea;
   --blush: #f8e3dd;
-  --cream: #fff8f3;
+  --peach: #fad2bf;
   --rose: #c98b7b;
-  --rose-dark: #a8655a;
-  --gold: #d4a373;
+  --rose-dark: #8f4f47;
+  --gold: #c8a165;
   --gold-light: #f3dca8;
-  --gold-deep: #9a6b3f;
+  --gold-deep: #8a5a2f;
   --ink: #5a3a36;
 }
 
@@ -15,12 +21,26 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
-  background: linear-gradient(180deg, #fffaf3, #f8e8de 40%, #f6ecdf);
   color: var(--ink);
   overflow-x: hidden;
+  /* Hero ki aakhri lehar cream hai, isliye page bhi cream se shuru hota hai */
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at 10% 30%, rgba(250, 210, 191, 0.45), transparent 40%),
+    radial-gradient(ellipse at 92% 55%, rgba(243, 220, 168, 0.35), transparent 38%),
+    radial-gradient(ellipse at 30% 90%, rgba(201, 139, 123, 0.22), transparent 42%),
+    linear-gradient(180deg, #fdf3ea 0%, #fdf3ea 16%, #fbe9de 34%, #f8dccd 62%, #f4d0be 100%);
+}
+
+::selection {
+  background: rgba(200, 161, 101, 0.35);
 }
 
 .script {
@@ -37,14 +57,14 @@ body {
 /* ---------- GOLD HEADINGS ---------- */
 .title,
 .footer .script {
-  background: linear-gradient(90deg, #9a6b3f, #e8c98a, #b88a52, #f3dca8, #9a6b3f);
+  background: linear-gradient(90deg, #8a5a2f, #d9b576, #a8743f, #e6c98e, #8a5a2f);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   animation: goldShift 6s linear infinite;
-  filter: drop-shadow(0 2px 3px rgba(154, 107, 63, 0.25));
+  filter: drop-shadow(0 3px 5px rgba(138, 90, 47, 0.25));
 }
 
 .title {
@@ -81,19 +101,22 @@ body {
 
 .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(212, 163, 115, 0.55);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 244, 232, 0.72));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 161, 101, 0.6);
   border-radius: 22px;
   padding: 28px;
-  box-shadow: 0 14px 36px rgba(168, 101, 90, 0.18);
+  color: var(--ink);
+  box-shadow:
+    0 16px 36px rgba(168, 101, 90, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .card::before {
   content: '';
   position: absolute;
   inset: 6px;
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  border: 1px solid rgba(200, 161, 101, 0.4);
   border-radius: 16px;
   pointer-events: none;
 }
@@ -101,76 +124,10 @@ body {
 h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
+  color: var(--rose-dark);
 }
 
-/* Hero */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  gap: 16px;
-}
-
-.eyebrow {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--gold-deep);
-}
-
-.names {
-  font-size: clamp(3.6rem, 16vw, 7.5rem);
-  color: #a8744a;
-  line-height: 1.05;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-shadow: 0 2px 0 #fff3dc, 0 8px 22px rgba(184, 138, 82, 0.4);
-}
-
-.amp {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.45em;
-  color: var(--gold);
-  display: inline-block;
-}
-
-.date {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-  padding: 10px 18px;
-}
-
-.scroll-hint {
-  position: absolute;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-}
-
-.scroll-hint div {
-  font-size: 2rem;
-  line-height: 0.6;
-}
-
-/* Buttons */
+/* ---------- BUTTONS ---------- */
 .open-btn {
   display: inline-block;
   text-decoration: none;
@@ -187,7 +144,17 @@ h3 {
   font-size: 0.95rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  box-shadow: 0 8px 22px rgba(90, 58, 40, 0.4);
+  box-shadow: 0 8px 22px rgba(138, 90, 47, 0.35);
+}
+
+.open-btn:hover {
+  background: linear-gradient(135deg, #fbe9c8, #e0b383 55%, #c79a60);
+}
+
+.open-btn:focus-visible,
+.music-btn:focus-visible {
+  outline: 3px solid var(--gold-deep);
+  outline-offset: 4px;
 }
 
 .open-btn::after {
@@ -212,7 +179,7 @@ h3 {
   }
 }
 
-/* Venue */
+/* ---------- VENUE ---------- */
 .venue-card {
   max-width: 440px;
   margin: 0 auto;
@@ -238,7 +205,7 @@ h3 {
   position: absolute;
   inset: 8px;
   border-radius: 50%;
-  background: var(--rose);
+  background: rgba(201, 139, 123, 0.45);
 }
 
 .venue-card h3 {
@@ -247,6 +214,7 @@ h3 {
 
 .venue-card p {
   font-style: italic;
+  color: #6b4a47;
 }
 
 .times {
@@ -272,7 +240,7 @@ h3 {
   color: var(--rose-dark);
 }
 
-/* Barat */
+/* ---------- BARAT ---------- */
 .road {
   position: relative;
   height: 220px;
@@ -283,7 +251,6 @@ h3 {
   position: absolute;
   right: 8px;
   bottom: 36px;
-  font-size: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,6 +262,7 @@ h3 {
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--gold-deep);
 }
 
 .procession {
@@ -303,7 +271,7 @@ h3 {
   bottom: 38px;
   display: flex;
   justify-content: space-between;
-  font-size: 2.8rem;
+  align-items: flex-end;
   z-index: 2;
 }
 
@@ -325,18 +293,14 @@ h3 {
 .petals span {
   position: absolute;
   top: 0;
-  font-size: 1.4rem;
+  display: block;
 }
 
-/* Dress */
+/* ---------- DRESS CODE ---------- */
 .dress-grid {
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.dress-emoji {
-  font-size: 4.2rem;
 }
 
 .dress-card h3 {
@@ -347,6 +311,7 @@ h3 {
 .dress-card p {
   font-size: 1.15rem;
   line-height: 1.4;
+  color: #6b4a47;
 }
 
 .swatches {
@@ -361,10 +326,10 @@ h3 {
   height: 34px;
   border-radius: 50%;
   border: 2px solid #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(90, 58, 54, 0.25);
 }
 
-/* Menu */
+/* ---------- MENU ---------- */
 .menu-list {
   display: grid;
   gap: 16px;
@@ -380,22 +345,19 @@ h3 {
   padding: 18px 22px;
 }
 
-.dish-emoji {
-  font-size: 2.8rem;
-}
-
 .dish h3 {
   font-size: 1.4rem;
 }
 
 .dish p {
-  opacity: 0.8;
+  color: #6b4a47;
   font-style: italic;
 }
 
+/* ---------- FOOTER ---------- */
 .footer {
   text-align: center;
-  padding: 60px 20px 90px;
+  padding: 60px 20px 100px;
 }
 
 .footer .script {
@@ -406,28 +368,48 @@ h3 {
 .footer p {
   margin-top: 8px;
   font-style: italic;
+  color: var(--gold-deep);
 }
 
-.music-btn {
+/* ---------- MUSIC ---------- */
+.music-control {
   position: fixed;
   right: 18px;
   bottom: 18px;
   z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-status {
+  padding: 8px 12px;
+  border: 1px solid rgba(200, 161, 101, 0.8);
+  border-radius: 20px;
+  background: rgba(255, 248, 238, 0.95);
+  color: var(--rose-dark);
+  box-shadow: 0 4px 14px rgba(138, 90, 47, 0.25);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.music-btn {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1.5px solid var(--gold);
+  border: 1.5px solid #f6e3b6;
   font-size: 1.4rem;
   cursor: pointer;
-  background: linear-gradient(135deg, #fff3df, #f0cfc4);
-  box-shadow: 0 8px 20px rgba(168, 101, 90, 0.35);
+  background: linear-gradient(135deg, #f7e0b8, #d4a373 55%, #b88a52);
+  box-shadow: 0 8px 20px rgba(138, 90, 47, 0.35);
 }
 
-/* Gold outline icons */
+/* ---------- GOLD OUTLINE ICONS ---------- */
 .gold-icon {
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0 2px 4px rgba(154, 107, 63, 0.25));
+  filter: drop-shadow(0 2px 3px rgba(138, 90, 47, 0.3));
 }
 
 .dress-icon {
@@ -441,11 +423,6 @@ h3 {
   height: 56px;
   flex-shrink: 0;
   margin: 0;
-}
-
-/* Barat icons */
-.procession {
-  align-items: flex-end;
 }
 
 .bar-icon {
@@ -472,6 +449,16 @@ h3 {
   margin: 0;
 }
 
-.petals span {
-  display: block;
+@media (max-width: 480px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .times {
+    gap: 28px;
+  }
 }
