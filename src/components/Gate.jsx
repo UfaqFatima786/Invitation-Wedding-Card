@@ -1,8 +1,6 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import './gate.css'
-
-// Chhota seeded random, taake phool har baar ek hi jagah banein
 function rng(seed) {
   let a = seed
   return () => {
@@ -16,8 +14,11 @@ function rng(seed) {
 
 const SHAPE = 'M2 620 V210 Q2 40 198 22 V620 Z'
 const GOLD = '#e8cb8e'
+const DOORS = [
+  { side: 'l', mirror: false, angle: -120 },
+  { side: 'r', mirror: true, angle: 120 },
+]
 
-// Ek darwaze ka lohe ka design (right wala isi ka mirror hai)
 function Leaf({ mirror }) {
   const id = mirror ? 'fgClipR' : 'fgClipL'
   return (
@@ -184,23 +185,18 @@ export default function Gate({ open, onOpen }) {
         <div className="fg-pillar r" />
 
         <div className="fg-doors">
-          <motion.div
-            className="fg-door l"
-            animate={{ rotateY: open ? -108 : 0 }}
-            transition={{ duration: 1.9, ease, delay: open ? 0.9 : 0 }}
-          >
-            <Leaf />
-          </motion.div>
-          <motion.div
-            className="fg-door r"
-            animate={{ rotateY: open ? 108 : 0 }}
-            transition={{ duration: 1.9, ease, delay: open ? 0.9 : 0 }}
-          >
-            <Leaf mirror />
-          </motion.div>
+          {DOORS.map(({ side, mirror, angle }) => (
+            <motion.div
+              key={side}
+              className={`fg-door ${side}`}
+              animate={{ rotateY: open ? angle : 0 }}
+              transition={{ duration: 2, ease, delay: open ? 0.7 : 0 }}
+            >
+              <Leaf mirror={mirror} />
+            </motion.div>
+          ))}
         </div>
-
-        {/* Zameen par saya aur girti hui pankhuriyan */}
+        {}
         <div className="fg-floor" />
         {petals.map((p, i) => (
           <span
@@ -210,7 +206,7 @@ export default function Gate({ open, onOpen }) {
           />
         ))}
 
-        {/* Phoolon ka garland aur fairy lights */}
+        {}
         <svg className="fg-flowers" viewBox="0 0 460 190">
           {leaves.map((l, i) => (
             <ellipse
@@ -266,8 +262,7 @@ export default function Gate({ open, onOpen }) {
             </g>
           ))}
         </svg>
-
-        {/* Satin bow: open karne par khul kar neeche gir jata hai */}
+        {}
         <motion.div
           className="fg-bow"
           animate={open ? { y: 60, opacity: 0, scale: 1.08, rotate: -3 } : { y: 0, opacity: 1, scale: 1, rotate: 0 }}
@@ -308,7 +303,7 @@ export default function Gate({ open, onOpen }) {
             <circle cx="230" cy="142" r="4.5" fill="url(#fgPearl)" />
             <circle cx="230" cy="156" r="5" fill="url(#fgPearl)" />
             <circle cx="230" cy="172" r="5.5" fill="url(#fgPearl)" />
-            {/* brooch ka chamakta sitara */}
+            {}
             <path
               className="fg-glint"
               d="M244 100 L246 106 L252 108 L246 110 L244 116 L242 110 L236 108 L242 106 Z"

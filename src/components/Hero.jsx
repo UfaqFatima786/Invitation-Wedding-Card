@@ -32,10 +32,10 @@ const css = `
   position: absolute; z-index: -4; left: 50%; bottom: 17%;
   width: min(60vw, 300px); aspect-ratio: 1; border-radius: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(circle, #ceb458 0 28%, rgba(187, 150, 65, 0.8) 40%, rgba(255, 200, 150, 0) 70%);
+  background: radial-gradient(circle, #fff6d6 0 28%, rgba(255, 211, 160, 0.8) 40%, rgba(255, 200, 150, 0) 70%);
   animation: hxSun 9s ease-in-out infinite;
 }
-.hx-cloud { position: absolute; z-index: -3; height: 54px; border-radius: 60px; background: rgb(245, 241, 189); filter: blur(10px); }
+.hx-cloud { position: absolute; z-index: -3; height: 54px; border-radius: 60px; background: rgba(255, 255, 255, .7); filter: blur(10px); }
 .hx-cloud.c1 { top: 12%; width: 220px; left: -240px; animation: hxCloud 60s linear infinite; }
 .hx-cloud.c2 { top: 25%; width: 300px; left: -320px; animation: hxCloud 85s linear infinite 12s; opacity: .8; }
 .hx-cloud.c3 { top: 6%; width: 160px; left: -180px; animation: hxCloud 70s linear infinite 30s; opacity: .65; }
@@ -48,9 +48,9 @@ const css = `
 .hx-sea { position: absolute; left: 0; right: 0; bottom: 0; height: 24vh; min-height: 170px; z-index: 0; pointer-events: none; }
 .hx-wave { position: absolute; left: 0; bottom: 0; width: 300%; height: 78%; }
 .hx-wave.w1 { bottom: 38%; height: 62%; animation: hxWave 34s linear infinite; }
-.hx-wave.w1 path { fill: #f8e1a3; opacity: .9; }
+.hx-wave.w1 path { fill: #efc3b0; opacity: .9; }
 .hx-wave.w2 { bottom: 20%; height: 66%; animation: hxWave 24s linear infinite reverse; }
-.hx-wave.w2 path { fill: #ddc26a; opacity: .92; }
+.hx-wave.w2 path { fill: #e3a994; opacity: .92; }
 .hx-wave.w3 { bottom: -1px; height: 62%; animation: hxWave 17s linear infinite; }
 .hx-wave.w3 path { fill: #fdf3ea; }
 .hx-glints { position: absolute; left: 50%; top: 0; bottom: 30%; width: 180px; transform: translateX(-50%); }
@@ -65,17 +65,17 @@ const css = `
 .hx-corner.tl { left: -2vw; }
 .hx-corner.tr { right: -2vw; }
 .hx-mirror { transform: scaleX(-1); }
-.hx-gold { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 10px 12px rgb(194, 176, 14)); }
+.hx-gold { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 10px 12px rgba(120, 80, 20, .38)); }
 .hx-ring { transform-box: view-box; animation: hxSpin 80s linear infinite; }
 .hx-gtw { animation: hxTw 2.6s ease-in-out infinite; }
 .hx-bq { position: absolute; bottom: -6px; z-index: 2; width: clamp(200px, 46vw, 480px); pointer-events: none; }
 .hx-bq.l { left: -8px; }
 .hx-bq.r { right: -8px; }
-.hx-bq svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 -4px 8px rgb(188, 190, 67)); }
+.hx-bq svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 -4px 8px rgba(120, 70, 60, .18)); }
 
 /* Kabootar */
 .hx-doves { position: absolute; top: 12%; left: 0; z-index: 3; width: 130px; pointer-events: none; }
-.hx-dove { display: block; overflow: visible; filter: drop-shadow(0 8px 8px rgba(120, 70, 60, .28)) drop-shadow(0 0 1.5px rgba(194, 191, 40, 0.71)); }
+.hx-dove { display: block; overflow: visible; filter: drop-shadow(0 8px 8px rgba(120, 70, 60, .28)) drop-shadow(0 0 1.5px rgba(150, 120, 90, .55)); }
 .hx-wing { transform-box: view-box; animation: hxFlap .8s ease-in-out infinite; }
 
 /* Lovebirds */
@@ -89,7 +89,7 @@ const css = `
   position: absolute; top: -30px; z-index: 4; pointer-events: none;
   width: calc(var(--s) * 1px); height: calc(var(--s) * 1.35px);
   border-radius: 80% 0 80% 20%;
-  background: linear-gradient(135deg, #fccb62, #ad7f28);
+  background: linear-gradient(135deg, #e6d169, #be8602);
   opacity: .85;
   animation: hxFall var(--d) linear infinite; animation-delay: var(--w);
 }
@@ -115,7 +115,7 @@ const css = `
 .hx-name { display: inline-block; white-space: nowrap; }
 .hx-letter {
   display: inline-block; padding: 0 .07em;
-  background: linear-gradient(180deg, #ecc98c 0%, #c3924f 48%, #8a5a2f 100%);
+  background: linear-gradient(180deg, #ecc98c 0%, #6e450b 48%, #d4d118 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
 }
@@ -137,6 +137,18 @@ const css = `
 .hx-scroll div { font-size: 2rem; line-height: .6; }
 @media (max-width: 480px) {
   .hx-date { letter-spacing: .14em; font-size: .82rem; padding: 10px 14px 10px 16px; }
+}
+@media (max-width: 380px) {
+  .hx { padding: 32px 14px 132px; }
+  .hx-content { gap: 9px; }
+  .hx-names { font-size: clamp(3.1rem, 16vw, 4rem); }
+  .hx-eyebrow { font-size: .72rem; letter-spacing: .28em; }
+  .hx-date { max-width: 94%; line-height: 1.5; }
+  .hx-scroll { font-size: .62rem; }
+}
+@media (max-height: 700px) and (max-width: 600px) {
+  .hx { min-height: 700px; padding-top: 24px; }
+  .hx-scroll { bottom: 10px; }
 }
 
 @keyframes hxWave { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -191,12 +203,9 @@ function ang(c, t) {
   const q = pt(c, Math.min(1, t + 0.01))
   return (Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI
 }
-
-/* ---------- Gradients (ek dafa define, har jagah use) ---------- */
 const ROSE_TONES = [
-  ['#fbd6d3', '#e58f98', '#f6b9ba', '#d4707e', '#e99ca2', '#b9505f'], // gulabi
-  ['#fffaf0', '#ecd7b4', '#f9ecd6', '#e2c898', '#efd9b0', '#c9a468'], // ivory
-  ['#ffe3d3', '#f0a58c', '#fbcdb8', '#e08a76', '#f1b09b', '#c76b5c'], // peach
+  ['#fcecbe', '#e0b85c', '#f4da8e', '#cc9c3c', '#e8c870', '#b8862a'], 
+  ['#fff8e2', '#f0dca6', '#fcf0c8', '#e8cd8c', '#f4e2b4', '#d4b062'], 
 ]
 
 function Defs() {
@@ -212,23 +221,23 @@ function Defs() {
           )),
         )}
         <linearGradient id="hxgBl" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#ef8fa4" />
-          <stop offset=".5" stopColor="#ffe6ec" />
-          <stop offset="1" stopColor="#ffffff" />
+          <stop offset="0" stopColor="#d9a63e" />
+          <stop offset=".5" stopColor="#f6e1a2" />
+          <stop offset="1" stopColor="#fffbe8" />
         </linearGradient>
         <linearGradient id="hxgLeaf" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="#6f8c5e" />
-          <stop offset="1" stopColor="#a9c093" />
+          <stop offset="0" stopColor="#6e4a0e" />
+          <stop offset="1" stopColor="#b8892c" />
         </linearGradient>
         <linearGradient id="hxgGoldA" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#d3a23e" />
-          <stop offset=".5" stopColor="#efd085" />
-          <stop offset="1" stopColor="#fdf0c4" />
+          <stop offset="0" stopColor="#dcb25a" />
+          <stop offset=".5" stopColor="#f0d386" />
+          <stop offset="1" stopColor="#fcebb8" />
         </linearGradient>
         <linearGradient id="hxgGoldB" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#7d5112" />
-          <stop offset=".5" stopColor="#b8862a" />
-          <stop offset="1" stopColor="#e3bd62" />
+          <stop offset="0" stopColor="#f0d994" />
+          <stop offset=".5" stopColor="#f8e8b8" />
+          <stop offset="1" stopColor="#fff8e0" />
         </linearGradient>
         <radialGradient id="hxgGoldCore" cx=".4" cy=".35" r=".8">
           <stop offset="0" stopColor="#c8962f" />
@@ -253,24 +262,22 @@ function Defs() {
     </svg>
   )
 }
-
-/* ---------- Phool aur patte ---------- */
 const PETAL = 'M0 0 C-30 -8 -44 -40 -20 -52 C-4 -58 14 -56 22 -44 C36 -30 22 -6 0 0 Z'
 
 function Rose({ x, y, r, rot = 0, tone = 0 }) {
   return (
     <g transform={`translate(${n1(x)} ${n1(y)}) rotate(${n1(rot)}) scale(${n1(r / 50)})`}>
-      <circle cx="2" cy="4" r="50" fill="rgba(90,40,40,.2)" />
+      <circle cx="2" cy="4" r="50" fill="rgba(90,60,10,.2)" />
       {[0, 1, 2, 3, 4].map((k) => (
-        <path key={`o${k}`} d={PETAL} transform={`rotate(${k * 72})`} fill={`url(#hxgR${tone}o)`} stroke="rgba(150,60,70,.28)" strokeWidth="1" />
+        <path key={`o${k}`} d={PETAL} transform={`rotate(${k * 72})`} fill={`url(#hxgR${tone % 2}o)`} stroke="rgba(150,105,30,.38)" strokeWidth="1" />
       ))}
       {[0, 1, 2, 3, 4].map((k) => (
-        <path key={`m${k}`} d={PETAL} transform={`rotate(${k * 72 + 36}) scale(.72)`} fill={`url(#hxgR${tone}m)`} stroke="rgba(150,60,70,.3)" strokeWidth="1.2" />
+        <path key={`m${k}`} d={PETAL} transform={`rotate(${k * 72 + 36}) scale(.72)`} fill={`url(#hxgR${tone % 2}m)`} stroke="rgba(150,105,30,.4)" strokeWidth="1.2" />
       ))}
       {[0, 1, 2, 3].map((k) => (
-        <path key={`i${k}`} d={PETAL} transform={`rotate(${k * 90 + 12}) scale(.44)`} fill={`url(#hxgR${tone}i)`} stroke="rgba(150,60,70,.34)" strokeWidth="1.6" />
+        <path key={`i${k}`} d={PETAL} transform={`rotate(${k * 90 + 12}) scale(.44)`} fill={`url(#hxgR${tone % 2}i)`} stroke="rgba(150,105,30,.45)" strokeWidth="1.6" />
       ))}
-      <path d="M0 -7 C9 -9 13 0 6 7 C-1 13 -11 8 -10 0 C-9 -10 3 -14 11 -8" fill="none" stroke="rgba(150,50,60,.6)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M0 -7 C9 -9 13 0 6 7 C-1 13 -11 8 -10 0 C-9 -10 3 -14 11 -8" fill="none" stroke="rgba(140,95,25,.65)" strokeWidth="1.6" strokeLinecap="round" />
       <ellipse cx="-14" cy="-24" rx="12" ry="5" transform="rotate(-35 -14 -24)" fill="#fff" opacity=".22" />
     </g>
   )
@@ -282,18 +289,18 @@ function Blossom({ x, y, r, rot = 0 }) {
   return (
     <g transform={`translate(${n1(x)} ${n1(y)}) rotate(${n1(rot)}) scale(${n1(r / 40)})`}>
       {[0, 1, 2, 3, 4].map((k) => (
-        <path key={k} d={BLOSSOM_PETAL} transform={`rotate(${k * 72})`} fill="url(#hxgBl)" stroke="rgba(214,120,140,.45)" strokeWidth=".9" />
+        <path key={k} d={BLOSSOM_PETAL} transform={`rotate(${k * 72})`} fill="url(#hxgBl)" stroke="rgba(180,130,40,.5)" strokeWidth=".9" />
       ))}
       {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => {
         const a = (k * 45 * Math.PI) / 180
         return (
           <g key={k}>
-            <line x1="0" y1="0" x2={n1(Math.sin(a) * 11)} y2={n1(-Math.cos(a) * 11)} stroke="#e7b6a0" strokeWidth=".9" />
-            <circle cx={n1(Math.sin(a) * 11)} cy={n1(-Math.cos(a) * 11)} r="1.7" fill="#d9a54a" />
+            <line x1="0" y1="0" x2={n1(Math.sin(a) * 11)} y2={n1(-Math.cos(a) * 11)} stroke="#c8962f" strokeWidth=".9" />
+            <circle cx={n1(Math.sin(a) * 11)} cy={n1(-Math.cos(a) * 11)} r="1.7" fill="#8a5a14" />
           </g>
         )
       })}
-      <circle r="3.4" fill="#e0788a" />
+      <circle r="3.4" fill="#a8721c" />
     </g>
   )
 }
@@ -301,13 +308,11 @@ function Blossom({ x, y, r, rot = 0 }) {
 function Leaf({ x, y, rot, s }) {
   return (
     <g transform={`translate(${n1(x)} ${n1(y)}) rotate(${n1(rot)}) scale(${n1(s)})`}>
-      <path d="M0 0 C8 -11 24 -13 36 0 C24 13 8 11 0 0 Z" fill="url(#hxgLeaf)" stroke="rgba(70,95,60,.4)" strokeWidth=".7" />
-      <path d="M2 0 L32 0" stroke="rgba(255,255,255,.5)" strokeWidth=".8" />
+      <path d="M0 0 C8 -11 24 -13 36 0 C24 13 8 11 0 0 Z" fill="url(#hxgLeaf)" stroke="rgba(70,45,5,.5)" strokeWidth=".7" />
+      <path d="M2 0 L32 0" stroke="rgba(255,226,150,.55)" strokeWidth=".8" />
     </g>
   )
 }
-
-/* ---------- Upar ke konon ka bara sunehri phool ---------- */
 const GOLD_PETAL = 'M0 0 C-26 -18 -34 -62 -12 -92 C-6 -100 6 -100 12 -92 C34 -62 26 -18 0 0 Z'
 const GOLD_RINGS = [
   { n: 12, s: 1.36, off: 0, g: 'A', dur: 90 },
@@ -322,8 +327,8 @@ function GoldFlower({ flip = false }) {
     <svg className="hx-gold" viewBox="0 0 400 400" aria-hidden="true">
       {[0, 1, 2, 3, 4, 5].map((k) => (
         <g key={`l${k}`} transform={`translate(200 200) rotate(${30 + k * 60}) scale(4.5 2.5)`}>
-          <path d="M0 0 C8 -11 24 -13 36 0 C24 13 8 11 0 0 Z" fill="url(#hxgLeaf)" stroke="rgba(70,95,60,.45)" strokeWidth=".5" />
-          <path d="M2 0 L32 0" stroke="rgba(255,255,255,.5)" strokeWidth=".5" />
+          <path d="M0 0 C8 -11 24 -13 36 0 C24 13 8 11 0 0 Z" fill="url(#hxgLeaf)" stroke="rgba(70,45,5,.55)" strokeWidth=".5" />
+          <path d="M2 0 L32 0" stroke="rgba(255,226,150,.55)" strokeWidth=".5" />
         </g>
       ))}
       {GOLD_RINGS.map((ring, i) => (
@@ -334,8 +339,8 @@ function GoldFlower({ flip = false }) {
         >
           {Array.from({ length: ring.n }, (_, k) => (
             <g key={k} transform={`translate(200 200) rotate(${ring.off + (k * 360) / ring.n}) scale(${ring.s})`}>
-              <path d={GOLD_PETAL} fill={`url(#hxgGold${ring.g})`} stroke="rgba(110,70,15,.45)" strokeWidth={0.9 / ring.s} />
-              <path d="M0 -8 C0 -40 0 -68 0 -86" fill="none" stroke="rgba(110,70,15,.3)" strokeWidth={0.9 / ring.s} strokeLinecap="round" />
+              <path d={GOLD_PETAL} fill={`url(#hxgGold${ring.g})`} stroke="rgba(170,125,40,.55)" strokeWidth={0.9 / ring.s} />
+              <path d="M0 -8 C0 -40 0 -68 0 -86" fill="none" stroke="rgba(170,125,40,.4)" strokeWidth={0.9 / ring.s} strokeLinecap="round" />
             </g>
           ))}
         </g>
@@ -372,7 +377,6 @@ function GoldFlower({ flip = false }) {
   )
 }
 
-/* ---------- Neeche ka guldasta aur lovebirds ---------- */
 const TWIG = [110, 222, 190, 176, 262, 168, 352, 134]
 const TWIG_PATH = 'M110 222 C190 176 262 168 352 134'
 const BIRD_T = [0.4, 0.8]
@@ -437,7 +441,7 @@ function Bouquet({ data, birds }) {
   const b2 = pt(TWIG, BIRD_T[1])
   return (
     <svg viewBox="0 0 440 320" aria-hidden="true">
-      <path d={TWIG_PATH} fill="none" stroke="#6e5040" strokeWidth="4.5" strokeLinecap="round" />
+      <path d={TWIG_PATH} fill="none" stroke="#7a5410" strokeWidth="4.5" strokeLinecap="round" />
       {data.twigLeaves.map((l, i) => (
         <Leaf key={`t${i}`} {...l} />
       ))}
@@ -454,7 +458,7 @@ function Bouquet({ data, birds }) {
         <Blossom key={`tb${i}`} {...b} />
       ))}
       {data.dots.map((d, i) => (
-        <circle key={i} cx={n1(d.x)} cy={n1(d.y)} r={n1(d.r)} fill="#fff" opacity=".95" />
+        <circle key={i} cx={n1(d.x)} cy={n1(d.y)} r={n1(d.r)} fill="#fff6d8" opacity=".95" />
       ))}
       {birds && (
         <>
@@ -466,7 +470,7 @@ function Bouquet({ data, birds }) {
           </g>
           <g transform={`translate(${n1((b1.x + b2.x) / 2)} ${n1(Math.min(b1.y, b2.y) - 52)})`}>
             <g className="hx-heart">
-              <path d="M0 7 C-12 -3 -9 -12 0 -7 C9 -12 12 -3 0 7 Z" fill="#e8838f" />
+              <path d="M0 7 C-12 -3 -9 -12 0 -7 C9 -12 12 -3 0 7 Z" fill="#dcae45" />
             </g>
           </g>
         </>
@@ -474,8 +478,6 @@ function Bouquet({ data, birds }) {
     </svg>
   )
 }
-
-/* ---------- Safed kabootar (asli parron wala) ---------- */
 const FEATHER = 'M0 0 C7 -12 12 -48 5 -86 C1 -92 -4 -92 -6 -86 C-13 -48 -8 -12 0 0 Z'
 const TAIL_FEATHER = 'M0 0 C5 -8 9 -30 4 -58 C1 -63 -3 -63 -5 -58 C-9 -30 -5 -8 0 0 Z'
 const FEATHER_STROKE = '#d3c6b3'
@@ -543,8 +545,6 @@ function Doves() {
     </motion.div>
   )
 }
-
-/* ---------- Door ke chhote parindey (silhouette) ---------- */
 const WINGS_UP = 'M2 12 Q11 1 20 11 Q29 1 38 12'
 const WINGS_DOWN = 'M2 7 Q11 13 20 11 Q29 13 38 7'
 
@@ -583,8 +583,6 @@ function Bird({ y, size, dur, delay, dir, flap }) {
     </motion.div>
   )
 }
-
-/* ---------- Girti pankhuriyan ---------- */
 const FALLING = (() => {
   const r = rng(77)
   return Array.from({ length: 16 }, () => ({
@@ -596,7 +594,6 @@ const FALLING = (() => {
   }))
 })()
 
-/* ---------- Naam (script font mein, ek ek harf nikalta hai) ---------- */
 function Name({ text, base }) {
   return (
     <span className="hx-name" aria-label={text}>
@@ -625,8 +622,6 @@ const SPARKLES = [
 ]
 
 const WAVE = 'M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 T1500 30 T1800 30 T2100 30 T2400 30 V120 H0 Z'
-
-/* Phool ek dafa banate hain (har render par dobara nahi) */
 const BQ_LEFT = buildBouquet(5)
 const BQ_RIGHT = buildBouquet(41)
 
@@ -662,7 +657,7 @@ export default function Hero({ show }) {
 
       {show && BIRDS.map((b, i) => <Bird key={i} {...b} />)}
 
-      {/* Samandar */}
+      {}
       <div className="hx-sea">
         <div className="hx-glints">
           {[0, 1, 2, 3, 4, 5, 6].map((i) => (
@@ -680,7 +675,7 @@ export default function Hero({ show }) {
         </svg>
       </div>
 
-      {/* Bara sunehri phool (upar ke kone) */}
+      {}
       <motion.div className="hx-corner tl" {...topIn('l')}>
         <GoldFlower />
       </motion.div>
@@ -690,7 +685,7 @@ export default function Hero({ show }) {
         </div>
       </motion.div>
 
-      {/* Guldaste (neeche ke kone), left par lovebirds */}
+      {}
       <motion.div className="hx-bq l" {...bottomIn('l')}>
         <Bouquet data={BQ_LEFT} birds />
       </motion.div>
@@ -827,5 +822,3 @@ export default function Hero({ show }) {
     </section>
   )
 }
-
-// END OF FILE (agar ye line aapki file mein nazar aaye to file poori copy hui hai)

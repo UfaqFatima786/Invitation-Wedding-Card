@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion'
-
-// Sirf sunehri outline wale icons. Scroll par line draw hoti hai.
 const steam = (x) => ({ t: 'path', d: `M${x} 12 C${x - 4} 8 ${x + 4} 6 ${x} 1` })
 
 const ICONS = {
-    // ---------- Dress code ----------
     ladies: {
         box: '0 0 120 170',
         shapes: [
@@ -45,7 +42,6 @@ const ICONS = {
         ],
     },
 
-    // ---------- Menu ----------
     biryani: {
         box: '0 0 64 64',
         shapes: [
@@ -116,8 +112,6 @@ const ICONS = {
             { t: 'path', d: 'M28 28 V54' },
         ],
     },
-
-    // ---------- Barat ----------
     dhol: {
         box: '0 0 100 100',
         shapes: [
@@ -159,10 +153,8 @@ const ICONS = {
             { t: 'path', d: 'M96 40 L90 33' },
             { t: 'path', d: 'M92 44 L84 38' },
             { t: 'path', d: 'M30 56 C18 60 16 74 20 86' },
-            { t: 'circle', cx: 104, cy: 42, r: 1.4 },
-            // zeen
-            { t: 'path', d: 'M48 48 L52 64 L72 64 L74 48' },
-            // dulha
+            { t: 'circle', cx: 104, cy: 42, r: 1.4 },    
+        { t: 'path', d: 'M48 48 L52 64 L72 64 L74 48' },
             { t: 'circle', cx: 62, cy: 18, r: 6 },
             { t: 'path', d: 'M55 16 C56 6 68 6 69 16' },
             { t: 'path', d: 'M62 24 L62 46' },

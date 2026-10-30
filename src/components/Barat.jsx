@@ -1,8 +1,7 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import GoldIcon from './Goldicon.jsx'
 
-// Scroll karne par barat dulhan ke ghar ki taraf chalti hai
 const procession = [
   { icon: 'dhol', cls: 'bar-icon' },
   { icon: 'trumpet', cls: 'bar-icon' },
@@ -12,14 +11,24 @@ const procession = [
 
 export default function Barat() {
   const ref = useRef(null)
+  const [viewportWidth, setViewportWidth] = useState(() => (
+    typeof window === 'undefined' ? 400 : window.innerWidth
+  ))
+
+  useEffect(() => {
+    const updateViewportWidth = () => setViewportWidth(window.innerWidth)
+    window.addEventListener('resize', updateViewportWidth)
+    return () => window.removeEventListener('resize', updateViewportWidth)
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   })
 
-  const w = typeof window !== 'undefined' ? window.innerWidth : 400
-  const rowW = 400
-  const x = useTransform(scrollYProgress, [0.15, 0.7], [-rowW, Math.max(0, w - rowW - 100)])
+  const rowW = Math.min(400, Math.max(220, viewportWidth - 112))
+  const contentWidth = Math.max(0, viewportWidth - 32)
+  const x = useTransform(scrollYProgress, [0.15, 0.7], [-rowW, Math.max(0, contentWidth - rowW - 88)])
   const houseOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0.4, 1])
   const houseScale = useTransform(scrollYProgress, [0.5, 0.7], [0.9, 1.1])
   const petals = useTransform(scrollYProgress, [0.55, 0.75], [0, 1])
