@@ -1,6 +1,6 @@
 export const invite = {
-  groom: 'MURTAJIS',
-  bride: 'MUNTASHA',
+  groom: 'Murtajis',
+  bride: 'Muntasha',
   date: 'Saturday, 20 December 2026',
   eventDateTime: '2026-12-20T16:00:00+05:00',
   nikkahTime: '4:00 PM',

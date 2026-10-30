@@ -59,8 +59,6 @@ const css = `
   background: linear-gradient(90deg, transparent, #fff4c8, transparent);
   animation: hxTw 2.4s ease-in-out infinite;
 }
-
-/* Phool aur bel */
 .hx-corner { position: absolute; top: -2vw; z-index: 1; width: clamp(200px, 36vw, 420px); pointer-events: none; }
 .hx-corner.tl { left: -2vw; }
 .hx-corner.tr { right: -2vw; }
@@ -72,19 +70,13 @@ const css = `
 .hx-bq.l { left: -8px; }
 .hx-bq.r { right: -8px; }
 .hx-bq svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 -4px 8px rgba(120, 70, 60, .18)); }
-
-/* Kabootar */
 .hx-doves { position: absolute; top: 12%; left: 0; z-index: 3; width: 130px; pointer-events: none; }
 .hx-dove { display: block; overflow: visible; filter: drop-shadow(0 8px 8px rgba(120, 70, 60, .28)) drop-shadow(0 0 1.5px rgba(150, 120, 90, .55)); }
 .hx-wing { transform-box: view-box; animation: hxFlap .8s ease-in-out infinite; }
-
-/* Lovebirds */
 .hx-bob { transform-box: fill-box; transform-origin: 50% 100%; animation: hxBob 3.4s ease-in-out infinite; }
 .hx-head { transform-box: fill-box; transform-origin: 35% 95%; animation: hxHead 4.2s ease-in-out infinite; }
 .hx-tail { transform-box: fill-box; transform-origin: 100% 30%; animation: hxTail 2.6s ease-in-out infinite; }
 .hx-heart { transform-box: fill-box; transform-origin: 50% 100%; animation: hxHeart 4.5s ease-in-out infinite; opacity: 0; }
-
-/* Girti pankhuriyan */
 .hx-fall {
   position: absolute; top: -30px; z-index: 4; pointer-events: none;
   width: calc(var(--s) * 1px); height: calc(var(--s) * 1.35px);
@@ -109,13 +101,13 @@ const css = `
 .hx-names {
   position: relative; display: flex; flex-direction: column; align-items: center;
   font-family: 'Pinyon Script', 'Great Vibes', cursive; font-weight: 400;
-  font-size: clamp(3.8rem, 17vw, 7.6rem); line-height: 1.02; margin: 4px 0 0;
+  font-size: clamp(3.8rem, 17.5vw, 7.6rem); line-height: 1.02; margin: 4px 0 0;
   filter: drop-shadow(0 6px 12px rgba(154, 107, 63, .32));
 }
 .hx-name { display: inline-block; white-space: nowrap; }
 .hx-letter {
   display: inline-block; padding: 0 .07em;
-  background: linear-gradient(180deg, #ecc98c 0%, #6e450b 48%, #d4d118 100%);
+  background: linear-gradient(180deg, #ad720d 0%, #6e450b 48%, #c0a404 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
 }
@@ -174,8 +166,6 @@ const css = `
   .hx-wing, .hx-bob, .hx-head, .hx-tail, .hx-heart, .hx-fall { animation: none; }
 }
 `
-
-/* ---------- Chhota seeded random (phool har baar ek hi jagah banein) ---------- */
 function rng(seed) {
   let a = seed
   return () => {
@@ -188,8 +178,6 @@ function rng(seed) {
 }
 
 const n1 = (n) => Math.round(n * 10) / 10
-
-/* Cubic bezier ke points aur angle */
 function pt(c, t) {
   const u = 1 - t
   const a = u * u * u

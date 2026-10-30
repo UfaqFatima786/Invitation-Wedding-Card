@@ -242,7 +242,7 @@ export default function Venue() {
             animate={{ scale: [1, 1.9], opacity: [0.6, 0] }}
             transition={{ repeat: Infinity, duration: 2.2 }}
           />
-          <span className="pin">📍</span>
+          <span className="pin"></span>
         </div>
 
         <h3>{invite.venueName}</h3>
