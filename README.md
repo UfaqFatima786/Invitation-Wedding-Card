@@ -1,6 +1,6 @@
 # 💍 Wedding Invitation Card
 
-A beautiful and interactive **Wedding Invitation Card Website** built with React.js. This project presents a modern digital wedding invitation experience with elegant animations and a musical touch.
+A beautiful , user-friendly and interactive **Wedding Invitation Card Website** built with React.js. This project presents a modern digital wedding invitation experience with elegant animations and a musical touch.
 
 ## ✨ Features
 
