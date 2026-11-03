@@ -1,4 +1,4 @@
-# 💍 Wedding Invitation Card
+# 💍 Nikkah and Wedding Invitation Card
 
 A beautiful , user-friendly and interactive **Nikkah and Wedding Invitation Card Website** built with React.js. This project presents a modern digital wedding invitation experience with elegant animations and a musical touch.
 
